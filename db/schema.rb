@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206224140) do
+ActiveRecord::Schema.define(version: 20180206224526) do
+
+  create_table "punch_blocks", force: :cascade do |t|
+    t.string "block_number"
+    t.string "block_type"
+    t.string "block_location"
+    t.text "block_description"
+    t.integer "terminal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["terminal_id"], name: "index_punch_blocks_on_terminal_id"
+  end
 
   create_table "terminals", force: :cascade do |t|
     t.integer "terminal_number"

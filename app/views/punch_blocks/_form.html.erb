@@ -1,0 +1,42 @@
+<%= form_with(model: punch_block, local: true) do |form| %>
+  <% if punch_block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(punch_block.errors.count, "error") %> prohibited this punch_block from being saved:</h2>
+
+      <ul>
+      <% punch_block.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :block_number %>
+    <%= form.text_field :block_number, id: :punch_block_block_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :block_type %>
+    <%= form.text_field :block_type, id: :punch_block_block_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :block_location %>
+    <%= form.text_field :block_location, id: :punch_block_block_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :block_description %>
+    <%= form.text_area :block_description, id: :punch_block_block_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terminal_id %>
+    <%= form.text_field :terminal_id, id: :punch_block_terminal_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

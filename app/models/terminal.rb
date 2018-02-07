@@ -1,3 +1,3 @@
 class Terminal < ApplicationRecord
-  belongs_to :PunchBlock
+  belongs_to :punch_block
 end

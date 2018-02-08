@@ -5,6 +5,7 @@ class TerminalsController < ApplicationController
   # GET /terminals.json
   def index
     @terminals = Terminal.all
+    @punch_blocks = PunchBlock.all
   end
 
   # GET /terminals/1
@@ -15,6 +16,8 @@ class TerminalsController < ApplicationController
   # GET /terminals/new
   def new
     @terminal = Terminal.new
+    @punch_blocks = PunchBlock.all
+
   end
 
   # GET /terminals/1/edit
@@ -25,6 +28,7 @@ class TerminalsController < ApplicationController
   # POST /terminals.json
   def create
     @terminal = Terminal.new(terminal_params)
+    @punch_blocks = PunchBlock.all
 
     respond_to do |format|
       if @terminal.save
@@ -69,6 +73,6 @@ class TerminalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def terminal_params
-      params.require(:terminal).permit(:terminal_number, :terminal_type, :signal_type)
+      params.require(:terminal).permit(:terminal_number, :terminal_type, :signal_type, :punch_block_id)
     end
 end

@@ -26,6 +26,11 @@
     <%= form.text_field :signal_type, id: :terminal_signal_type %>
   </div>
 
+  <div class="field">
+    <%= form.label :punch_block_id %>
+    <%= form.collection_select(:punch_block_id, @punch_blocks, :id, :block)  %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wire_number: 1
+  wire_type: MyString
+  signal_type: MyString
+  wire_description: MyText
+  multi_pair: false
+
+two:
+  wire_number: 1
+  wire_type: MyString
+  signal_type: MyString
+  wire_description: MyText
+  multi_pair: false

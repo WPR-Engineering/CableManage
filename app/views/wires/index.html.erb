@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wire number</th>
+      <th>Wire type</th>
+      <th>Signal type</th>
+      <th>Wire description</th>
+      <th>Multi pair</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wires.each do |wire| %>
+      <tr>
+        <td><%= wire.wire_number %></td>
+        <td><%= wire.wire_type %></td>
+        <td><%= wire.signal_type %></td>
+        <td><%= wire.wire_description %></td>
+        <td><%= wire.multi_pair %></td>
+        <td><%= link_to 'Show', wire %></td>
+        <td><%= link_to 'Edit', edit_wire_path(wire) %></td>
+        <td><%= link_to 'Destroy', wire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wire', new_wire_path %>

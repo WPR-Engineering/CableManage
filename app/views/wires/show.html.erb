@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wire number:</strong>
+  <%= @wire.wire_number %>
+</p>
+
+<p>
+  <strong>Wire type:</strong>
+  <%= @wire.wire_type %>
+</p>
+
+<p>
+  <strong>Signal type:</strong>
+  <%= @wire.signal_type %>
+</p>
+
+<p>
+  <strong>Wire description:</strong>
+  <%= @wire.wire_description %>
+</p>
+
+<p>
+  <strong>Multi pair:</strong>
+  <%= @wire.multi_pair %>
+</p>
+
+<%= link_to 'Edit', edit_wire_path(@wire) %> |
+<%= link_to 'Back', wires_path %>

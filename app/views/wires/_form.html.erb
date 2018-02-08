@@ -1,0 +1,42 @@
+<%= form_with(model: wire, local: true) do |form| %>
+  <% if wire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wire.errors.count, "error") %> prohibited this wire from being saved:</h2>
+
+      <ul>
+      <% wire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :wire_number %>
+    <%= form.number_field :wire_number, id: :wire_wire_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wire_type %>
+    <%= form.text_field :wire_type, id: :wire_wire_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :signal_type %>
+    <%= form.text_field :signal_type, id: :wire_signal_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wire_description %>
+    <%= form.text_area :wire_description, id: :wire_wire_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :multi_pair %>
+    <%= form.check_box :multi_pair, id: :wire_multi_pair %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class PunchBlock < ApplicationRecord
+end

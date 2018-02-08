@@ -1,2 +1,0 @@
-class Port < ApplicationRecord
-end

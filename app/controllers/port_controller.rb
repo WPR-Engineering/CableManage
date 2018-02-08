@@ -1,2 +1,0 @@
-class PortController < ApplicationController
-end

@@ -1,0 +1,2 @@
+class Runcode < ApplicationRecord
+end

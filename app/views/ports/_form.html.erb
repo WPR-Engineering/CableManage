@@ -1,0 +1,37 @@
+<%= form_with(model: port, local: true) do |form| %>
+  <% if port.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(port.errors.count, "error") %> prohibited this port from being saved:</h2>
+
+      <ul>
+      <% port.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :port_type %>
+    <%= form.text_field :port_type, id: :port_port_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :signal_type %>
+    <%= form.text_field :signal_type, id: :port_signal_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :port %>
+    <%= form.text_field :port, id: :port_port %>
+  </div>
+
+  <div class="field">
+    <%= form.label :port_input %>
+    <%= form.check_box :port_input, id: :port_port_input %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

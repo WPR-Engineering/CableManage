@@ -1,0 +1,27 @@
+<%= form_with(model: runcode, local: true) do |form| %>
+  <% if runcode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(runcode.errors.count, "error") %> prohibited this runcode from being saved:</h2>
+
+      <ul>
+      <% runcode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :runcode %>
+    <%= form.number_field :runcode, id: :runcode_runcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :runcode_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

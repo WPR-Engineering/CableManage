@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :ports
+  resources :devices
+  resources :runcodes
   resources :wires
   resources :terminals
   resources :punch_blocks

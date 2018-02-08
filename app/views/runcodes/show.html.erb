@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Runcode:</strong>
+  <%= @runcode.runcode %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @runcode.description %>
+</p>
+
+<%= link_to 'Edit', edit_runcode_path(@runcode) %> |
+<%= link_to 'Back', runcodes_path %>

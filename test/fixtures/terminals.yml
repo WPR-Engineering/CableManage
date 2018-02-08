@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  terminal_number: 1
+  terminal_type: MyString
+  signal_type: MyString
+
+two:
+  terminal_number: 1
+  terminal_type: MyString
+  signal_type: MyString

@@ -22,6 +22,8 @@ class TerminalsController < ApplicationController
 
   # GET /terminals/1/edit
   def edit
+    @punch_blocks = PunchBlock.all
+
   end
 
   # POST /terminals

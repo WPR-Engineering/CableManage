@@ -23,6 +23,15 @@
 <p>
   <strong>Block location:</strong>
   <%= @punch_block.block_location %>
+</p>
+
+<p>
+  <strong>Related Terminals:</strong>
+  <% @terminals.each do |terminal| %>
+  <%= terminal.terminal_number %>,
+  <% end %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_punch_block_path(@punch_block) %> |

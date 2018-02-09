@@ -10,6 +10,7 @@ class PunchBlocksController < ApplicationController
   # GET /punch_blocks/1
   # GET /punch_blocks/1.json
   def show
+    @terminals = Terminal.where(punch_block_id: params[:id])
   end
 
   # GET /punch_blocks/new

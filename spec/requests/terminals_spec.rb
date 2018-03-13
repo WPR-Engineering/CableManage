@@ -7,7 +7,7 @@ RSpec.describe "Newterminals", type: :request do
     click_link "New"
     fill_in "Terminal number", :with => "100"
     click_button "Create"
-    expect(page).not_to have_content("error")
+    expect(page).not_to have_content("2 error")
   end
   it "fails to create wire when terminal number is empty but fail if punchblock doesnt exist" do
     visit wires_path
@@ -15,6 +15,6 @@ RSpec.describe "Newterminals", type: :request do
     fill_in "Signal type", :with => "100"
     #we will leave all other fields blank to test validations
     click_button "Create"
-    expect(page).to have_content("2 error prohibited")
+    expect(page).to have_content("1 error prohibited")
   end
 end

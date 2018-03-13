@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208172107) do
+ActiveRecord::Schema.define(version: 20180313211525) do
 
-  create_table "devices", force: :cascade do |t|
-    t.string "device_type"
-    t.string "device_location"
-    t.text "device_description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "devices" because of following StandardError
+#   Unknown type 'has_many' for column 'port'
 
   create_table "ports", force: :cascade do |t|
     t.string "port_type"
@@ -27,6 +22,8 @@ ActiveRecord::Schema.define(version: 20180208172107) do
     t.boolean "port_input"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "port"
+    t.integer "device_id"
   end
 
   create_table "punch_blocks", force: :cascade do |t|
@@ -39,12 +36,8 @@ ActiveRecord::Schema.define(version: 20180208172107) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "runcodes", force: :cascade do |t|
-    t.integer "runcode"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "runcodes" because of following StandardError
+#   Unknown type 'has_one' for column 'wire'
 
   create_table "terminals", force: :cascade do |t|
     t.integer "terminal_number"

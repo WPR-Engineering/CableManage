@@ -5,6 +5,7 @@ class PortsController < ApplicationController
   # GET /ports.json
   def index
     @ports = Port.all
+    @devices = Device.all
   end
 
   # GET /ports/1
@@ -15,6 +16,7 @@ class PortsController < ApplicationController
   # GET /ports/new
   def new
     @port = Port.new
+    @devices = Device.all
   end
 
   # GET /ports/1/edit
@@ -25,6 +27,7 @@ class PortsController < ApplicationController
   # POST /ports.json
   def create
     @port = Port.new(port_params)
+    @devices = Device.all
 
     respond_to do |format|
       if @port.save
@@ -69,6 +72,6 @@ class PortsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def port_params
-      params.require(:port).permit(:port_type, :signal_type, :port, :port_input)
+      params.require(:port).permit(:port_type, :signal_type, :port, :port_input, :device_id)
     end
 end

@@ -5,26 +5,53 @@ class RuncodesController < ApplicationController
   # GET /runcodes.json
   def index
     @runcodes = Runcode.all
-  end
+    @terminals = Terminal.all
+    @ports = Port.all
+    @wires = Wire.all
+    @devices = Device.all
+    @punch_block =PunchBlock.all
+    logger.debug "YOUVE LOADED A PAGE!"
+    end
 
   # GET /runcodes/1
   # GET /runcodes/1.json
   def show
+    @terminals = Terminal.all
+    @ports = Port.all
+    @wires = Wire.all
+    @devices = Device.all
+    @punch_block = PunchBlock.all
   end
 
   # GET /runcodes/new
   def new
     @runcode = Runcode.new
+    @terminals = Terminal.all
+    @ports = Port.all
+    @wires = Wire.all
+    @devices = Device.all
+    @punch_block =PunchBlock.all
   end
 
   # GET /runcodes/1/edit
   def edit
+    @terminals = Terminal.all
+    @ports = Port.all
+    @wires = Wire.all
+    @devices = Device.all
+    @punch_block =PunchBlock.all
   end
 
   # POST /runcodes
   # POST /runcodes.json
   def create
     @runcode = Runcode.new(runcode_params)
+    @terminals = Terminal.all
+    @ports = Port.all
+    @wires = Wire.all
+    @devices = Device.all
+    @punch_block =PunchBlock.all
+    logger.debug "Creating runcode!"
 
     respond_to do |format|
       if @runcode.save
@@ -69,6 +96,6 @@ class RuncodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def runcode_params
-      params.require(:runcode).permit(:runcode, :description)
+      params.require(:runcode).permit(:runcode, :description, :wire, :terminal, :port, :punch_block, :wire_number, :device, :port_id)
     end
 end

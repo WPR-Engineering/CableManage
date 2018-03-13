@@ -31,6 +31,11 @@
     <%= form.check_box :port_input, id: :port_port_input %>
   </div>
 
+  <div class="field">
+    <%= form.label :device_id %>
+    <%= form.collection_select(:device_id, @devices, :id, :device_name)  %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

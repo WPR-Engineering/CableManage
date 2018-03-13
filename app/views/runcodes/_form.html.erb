@@ -21,6 +21,22 @@
     <%= form.text_area :description, id: :runcode_description %>
   </div>
 
+  <div class="field">
+    <%= form.label :terminal %>
+    <%= form.collection_select(:terminal, @terminals, :id, :terminal_number)  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wire %>
+    <%= form.collection_select(:wire, @wires, :id, :wire_number)  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :port %>
+    <%= form.collection_select(:port, @ports, :id, :port)  %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -53,6 +53,7 @@ class RuncodesController < ApplicationController
     @punch_block =PunchBlock.all
     logger.debug "Creating runcode!"
 
+
     respond_to do |format|
       if @runcode.save
         format.html { redirect_to @runcode, notice: 'Runcode was successfully created.' }

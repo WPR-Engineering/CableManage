@@ -1,5 +1,5 @@
 class AddPortToDevice < ActiveRecord::Migration[5.1]
   def change
-    add_column :devices, :port, :has_many, index: true
+    add_reference :devices, :port, foreign_key: true
   end
 end

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313211525) do
+ActiveRecord::Schema.define(version: 20180316181038) do
 
-# Could not dump table "devices" because of following StandardError
-#   Unknown type 'has_many' for column 'port'
+  create_table "devices", force: :cascade do |t|
+    t.string "device_type"
+    t.string "device_location"
+    t.text "device_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "port_id"
+    t.string "device_name"
+    t.index ["port_id"], name: "index_devices_on_port_id"
+  end
 
   create_table "ports", force: :cascade do |t|
     t.string "port_type"
@@ -36,8 +44,18 @@ ActiveRecord::Schema.define(version: 20180313211525) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "runcodes" because of following StandardError
-#   Unknown type 'has_one' for column 'wire'
+  create_table "runcodes", force: :cascade do |t|
+    t.integer "runcode"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "wire_id"
+    t.integer "port_id"
+    t.integer "terminal_id"
+    t.index ["port_id"], name: "index_runcodes_on_port_id"
+    t.index ["terminal_id"], name: "index_runcodes_on_terminal_id"
+    t.index ["wire_id"], name: "index_runcodes_on_wire_id"
+  end
 
   create_table "terminals", force: :cascade do |t|
     t.integer "terminal_number"
